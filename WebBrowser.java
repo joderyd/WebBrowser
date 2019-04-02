@@ -92,7 +92,7 @@ public class WebBrowser extends JFrame implements ActionListener{
 
 
 class WebReader extends JEditorPane{
-	WebReader(){
+	protected WebReader(){
 		setEditable(false);
 		setText("\n\nWelcome to Jonathan's WebBrowser!\n\nThis is the Default Home Screen");
 	}
@@ -114,7 +114,6 @@ class WebReader extends JEditorPane{
 			System.out.println("\nResponse Message: " + huc.getResponseMessage() + "\nResponse Code: " + huc.getResponseCode());
 			return true;
 		}
-		
 		catch(IOException e) {  // wrong with "http" or "www"
 			if(webaddr.startsWith("http://www.")) {
 				JOptionPane.showMessageDialog(this, "Could not find webpage!\n\nHost could not be found!");
@@ -133,8 +132,3 @@ class WebReader extends JEditorPane{
 		}
 	}
 }
-
-
-
-
-
